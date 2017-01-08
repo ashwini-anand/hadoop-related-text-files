@@ -1,0 +1,47 @@
+* where does the mapper and reducer run ?
+http://stackoverflow.com/questions/11272264/which-machine-does-the-reducer-of-the-hadoop-run-on
+* difference between task tracker node and datanode
+https://www.quora.com/What-is-the-difference-between-Namenode-+-Datanode-and-Jobtracker-+-Tasktracker-and-Combiners-Shufflers-and-Mappers+Reducers-in-the-following-ways
+* how mapreduce works ?
+https://www.quora.com/How-does-Map-Reduce-exactly-work-And-what-functions-run-on-which-machines-architecturally
+*how to know on which node reduce is running
+http://stackoverflow.com/questions/33282121/how-hadoop-decides-how-many-nodes-will-do-map-and-reduce-tasks
+http://stackoverflow.com/questions/11272264/which-machine-does-the-reducer-of-the-hadoop-run-on
+*The piece of code by user is submitted to job tracker. Task trackers run the map and reduce code. Task trackers run on data node and hence mapper process is near to data(in most cases [sometimes mapper func for an input split may run on different machine than on which its input split is present beacause all machines having that input split is busy in doing map function for some other input split]) and saves a lot of network traffic.
+*what does shuffle and sort do in hadoop ?
+http://stackoverflow.com/questions/22141631/what-is-the-purpose-of-shuffling-and-sorting-phase-in-the-reducer-in-map-reduce
+http://blog.syncsort.com/2013/02/big-data/hadoop-mapreduce-to-sort-or-not-to-sort/
+*What is the difference between Partitioner, Combiner, Shuffle and sort phase in Map Reduce. What is the order of execution ?
+https://community.hortonworks.com/questions/14328/what-is-the-difference-between-partitioner-combine.html   -- read all comments and all answers
+*where does shuffling and sorting happens in hadoop?
+shuffling is just transferring of data from mapper to reducer. sorting may happen both at mapper and reducer. --see and verify
+http://stackoverflow.com/questions/39562643/shuffle-and-sort-for-mapreduce --read comments too.
+*difference between hadoop streaming and regular hadoop jobs ?
+https://www.quora.com/What-is-the-difference-between-hadoop-and-hadoop-streaming
+http://stackoverflow.com/questions/19681455/hadoop-streaming-job-vs-regular-jobs
+*what are major components of hadoop ecosystem ?
+http://www.bmcsoftware.in/guides/hadoop-ecosystem.html
+https://www.coursera.org/learn/hadoop/lecture/1BPj6/the-hadoop-zoo
+Refer tom white book also ( what all components he is covering)
+*http://stackoverflow.com/questions/22554100/hdfs-file-system-namespace
+*https://www.quora.com/Can-we-have-more-than-one-namenodes-in-a-Hadoop-cluster
+*(jobtracker, task tracker) vs (ResourceManager, NodeManager)
+http://stackoverflow.com/questions/21278619/hadoop-gen1-vs-hadoop-gen2
+*http://stackoverflow.com/questions/30967247/difference-between-application-manager-and-application-master-in-yarn
+* Apache Hadoop YARN: How YARN changed Hadoop from v1 to v2
+https://www.youtube.com/watch?v=ZYXVNxmMchc&list=PLFkNasMuTNRYr-UPG3D1HFuGlF8Xap66L&index=3
+*http://stackoverflow.com/questions/34703091/default-number-of-reducers
+*http://stackoverflow.com/questions/22360871/hadoop-mapreduce-clarification-on-number-of-reducers
+*jobtracker and task trackers (and other things)
+http://www.fromdev.com/2010/12/interview-questions-hadoop-mapreduce.html
+* Node manager runs on each data node (as per edureks video).
+*in namenode federation, is there a standby namenode for each namenode (of federation) ?
+*Difference between job, application, task, task attempt logs in Hadoop, Oozie is as below:
+ In terms of YARN, the programs that are being run on a cluster are called applications. In terms of MapReduce they are called jobs.
+ http://stackoverflow.com/questions/35146215/difference-between-job-application-task-task-attempt-logs-in-hadoop-oozie
+
+* what is hadoop's default security mode for hdfs (disabled or enabled)? (page 52 block last para , tom white)
+* which one takes priority , config in allocation file (e.g. <queuePlacementPolicy> in fair-scheduler.xml) or  setting corresponding property (e.g. yarn.scheduler.fair.user-as-default-queue) ? 	page 93 tom white
+* MapReduce design patterns book by donald miner and adam shook
+ 
+
